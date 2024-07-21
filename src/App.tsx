@@ -1,29 +1,68 @@
-import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-import { Button } from "@/components/ui/button";
+import "./App.css"
+import { Counter } from "./features/counter/Counter"
+import { Quotes } from "./features/quotes/Quotes"
+import logo from "./logo.svg"
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link> |{" "}
-        <Link to="/users">Users</Link>
-      </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <Button className="bg-slate-600 p-5">Home</Button>
-            </div>
-          }
-        />
-        <Route path="/about" element={<div>About</div>} />
-        <Route path="/users" element={<div>Users</div>} />
-        <Route path="*" element={<div>Not Found</div>} />
-      </Routes>
-    </Router>
-  );
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Counter />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <Quotes />
+        <span>
+          <span>Learn </span>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://redux.js.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://redux-toolkit.js.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux Toolkit
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://react-redux.js.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React Redux
+          </a>
+          ,<span> and </span>
+          <a
+            className="App-link"
+            href="https://reselect.js.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Reselect
+          </a>
+        </span>
+      </header>
+    </div>
+  )
 }
 
-export default App;
+export default App
